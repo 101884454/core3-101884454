@@ -39,14 +39,17 @@ class MedalListAdapter(private val data: List<medalist>, private val OnCountryCL
             ioc.text = item.IOC
             medals.text = allmedals.toString()
             when {
-                item.gold.toInt() > item.silver.toInt() && item.gold.toInt() > item.bronze.toInt() && allmedals != 0 ->{
+                item.gold.toInt() > item.silver.toInt() && item.gold.toInt() > item.bronze.toInt()->{
                     medals.setTextColor(Color.parseColor("#ffeb3b"))
                 }
-                item.silver.toInt()>item.gold.toInt() && item.silver.toInt() > item.bronze.toInt() && allmedals != 0-> {
+                item.silver.toInt()>item.gold.toInt() && item.silver.toInt() > item.bronze.toInt()-> {
                     medals.setTextColor(Color.parseColor("#a4a4a4"))
                 }
-                item.bronze.toInt()>item.gold.toInt() && item.bronze.toInt() > item.silver.toInt() && allmedals != 0-> {
+                item.bronze.toInt()>item.gold.toInt() && item.bronze.toInt() > item.silver.toInt()-> {
                     medals.setTextColor(Color.parseColor("#c7b800"))
+                }
+                else ->{
+                    medals.setTextColor(Color.parseColor("#000000"))
                 }
             }
             }
